@@ -1,0 +1,277 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Світ Електроніки — навчись електроніці, створюй проєкти, вирішуй проблеми та експериментуй!">
+  <meta name="keywords" content="електроніка, навчання, компоненти, схеми, DIY, ремонт, мікроконтролери, фізика електроніки">
+  <meta name="author" content="Світ Електроніки">
+  <title>Світ Електроніки 2 </title>
+  <style>
+    /* Загальні стилі */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(to right, #003973, #e5e5be);
+      color: white;
+      padding: 40px;
+      text-align: center;
+      border-bottom: 5px solid #ffd700;
+    }
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.2em;
+    }
+    header button {
+      background-color: #ffd700;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+    }
+    header button:hover {
+      background-color: #ffbb33;
+    }
+
+    /* Навігація */
+    nav {
+      background: #002b5c;
+      padding: 15px 10px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      border-bottom: 2px solid #ffd700;
+    }
+    nav a {
+      color: white;
+      margin: 10px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+      padding: 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    nav a:hover {
+      background-color: #ffd700;
+      color: #002b5c;
+    }
+
+    /* Основний контейнер */
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 30px;
+      background: white;
+      border-radius: 10px;
+      margin-top: 30px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      border-left: 5px solid #003973;
+    }
+    .container h2 {
+      font-size: 2.2em;
+      color: #003973;
+      border-bottom: 2px solid #ffd700;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    .container p {
+      font-size: 1.1em;
+      line-height: 1.7;
+    }
+    .columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+    }
+    .column {
+      flex: 1;
+      min-width: 250px;
+    }
+    iframe {
+      max-width: 100%;
+      margin: 20px 0;
+      border: 3px solid #003973;
+      border-radius: 10px;
+    }
+
+    /* Відповіді на FAQ */
+    .faq-item {
+      margin-bottom: 20px;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #ffd700;
+    }
+    .faq-question {
+      font-weight: bold;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+    .faq-answer {
+      display: none;
+      margin-top: 10px;
+      font-size: 1.1em;
+      color: #555;
+    }
+
+    /* Темна тема */
+    .dark-mode {
+      background-color: #1e1e1e;
+      color: #f0f0f0;
+    }
+    .dark-mode .container {
+      background-color: #2c2c2c;
+    }
+    .dark-mode nav {
+      background-color: #222;
+    }
+    .dark-mode nav a {
+      color: #f0f0f0;
+    }
+    .dark-mode nav a:hover {
+      background-color: #ffd700;
+      color: #002b5c;
+    }
+    .dark-mode footer {
+      background-color: #222;
+    }
+
+    /* Зміни для мобільних пристроїв */
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+      }
+      .columns {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    /* Підготовка кнопки наверх */
+    .top-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+padding: 12px 18px;
+      background: #003973;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      transition: background 0.3s;
+    }
+    .top-button:hover {
+      background-color: #ffd700;
+    }
+footer {
+      background: #002b5c;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    footer p {
+      font-size: 1.2em;
+    }
+
+    /* Вставка кольорових блоків для важливих посилань */
+    .external-links {
+      background-color: #e5e5be;
+      border-left: 5px solid #003973;
+      padding: 20px;
+      margin-top: 30px;
+      border-radius: 8px;
+      font-size: 1.2em;
+      color: #003973;
+    }
+    .external-links h2 {
+      color: #003973;
+      margin-bottom: 15px;
+      font-size: 1.6em;
+    }
+    .external-links a {
+      color: #003973;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+      margin-right: 15px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    .external-links a:hover {
+      color: #ffd700;
+    }
+
+    /* Стиль для додаткових контейнерів з інтерактивним контентом */
+    .quiz, .game {
+      margin-top: 20px;
+      background: #eef;
+      padding: 20px;
+      border-radius: 10px;
+      border-left: 5px solid #003973;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Світ Електроніки</h1>
+    <p>Навчайся. Експериментуй. Створюй.</p>
+    <button onclick="toggleDarkMode()">Темна тема</button>
+  </header>
+
+  <nav>
+    <a href="#theory">Теорія</a>
+    <a href="#components">Компоненти</a>
+    <a href="#projects">Проєкти</a>
+    <a href="#troubles">Несправності</a>
+    <a href="#faq">FAQ</a>
+    <a href="#physics">Фізика</a>
+    <a href="#digital">Цифрова електроніка</a>
+    <a href="#analog">Аналогова електроніка</a>
+    <a href="#microcontrollers">Мікроконтролери</a>
+    <a href="#d-plus-d-minus">Що таке D+ та D-</a>
+    <a href="#jokes">Жарти про електроніку</a>
+    <a href="#history">Історія електроніки</a>
+    <a href="#interesting-facts">Цікаві факти</a>
+    <a href="#beginner-tips">Поради для початківців</a>
+    <a href="#safety-tips">Рекомендації про безпеку</a>
+  </nav>
+</div>
+  <div class="external-links">
+    <h2>Корисні посилання:</h2>
+    <p><a href="https://tumowyk.github.io/I.T-/" target="_blank">Мій сайт "I.T"</a></p>
+    <p><a href="https://t.me/elekroni_top" target="_blank">Група РадіоТехніки в Telegram</a></p>
+  </div>
+
+
+  <footer>
+    <p>Світ Електроніки Ivan Tymoshuk &copy; 2025</p>
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    function toggleAnswer(element) {
+      const answer = element.nextElementSibling;
+      answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
